@@ -313,7 +313,7 @@ public class SendPacs008Tests {
             tmf = HTTPSFactory.createTrustManager(new File(TRUST_STORE).getName(), TRUST_PASS);
         }
 
-        SSLContext ctx = SSLContext.getInstance("TLS");
+        SSLContext ctx = SSLContext.getInstance("TLSv1.2");
         ctx.init(keystore ? kmf.getKeyManagers() : null, truststore ? tmf.getTrustManagers() : null, new java.security.SecureRandom());
 
         SSLSocketFactory socketFact = ctx.getSocketFactory();
