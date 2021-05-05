@@ -234,7 +234,7 @@ public class SendPacs008Tests {
     void sendToExternalOldTlsVersion() throws Exception {
         String exmsg = "protocol_version";
         SSLHandshakeException e = assertThrows(SSLHandshakeException.class, () ->
-            sendPost(String.format(mx, "localhost", "localhost"), new URL("https://localhost:443/api/v1/pacs"), true, true, "TLSv1.2"),
+            sendPost(String.format(mx, "localhost", "localhost"), new URL("https://localhost:443/api/v1/pacs"), true, true, "TLSv1.2")
         );
         assertTrue(e.getMessage().contains(exmsg), "SSLHandshakeException with message " + e.getMessage() + " did not contain \"" + exmsg + "\".");
     }
